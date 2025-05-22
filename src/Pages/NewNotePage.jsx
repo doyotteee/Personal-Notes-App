@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import ButtonKembali from '../components/ButtonKembali';
 
 function NewNotePage({ onAddNote }) {
@@ -37,5 +38,9 @@ function NewNotePage({ onAddNote }) {
     </div>
   );
 }
+
+NewNotePage.propTypes = {
+  onAddNote: PropTypes.func.isRequired,
+};
 
 export default NewNotePage;

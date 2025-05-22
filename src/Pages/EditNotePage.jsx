@@ -51,4 +51,8 @@ function EditNotePage({ onEditNote }) {
   );
 }
 
+EditNotePage.propTypes = {
+  onEditNote: PropTypes.func.isRequired,
+};
+
 export default EditNotePage;

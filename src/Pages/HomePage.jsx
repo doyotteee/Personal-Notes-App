@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import SearchBar from '../components/SearchBar';
 import NoteList from '../components/NoteList';
 import FloatingButtons from '../components/FloatingButtons';
@@ -18,5 +19,12 @@ function HomePage({ notes, onDelete, onArchive, isArchive }) {
     </div>
   );
 }
+
+HomePage.propTypes = {
+  notes: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onArchive: PropTypes.func.isRequired,
+  isArchive: PropTypes.bool.isRequired,
+};
 
 export default HomePage;

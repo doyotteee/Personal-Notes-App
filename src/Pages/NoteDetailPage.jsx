@@ -84,5 +84,9 @@ function NoteDetailPage({ onDelete, onArchive }) {
     </div>
   );
 }
+NoteDetailPage.propTypes = {
+  onDelete: PropTypes.func.isRequired,
+  onArchive: PropTypes.func.isRequired,
+};
 
 export default NoteDetailPage;

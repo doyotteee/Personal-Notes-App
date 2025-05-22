@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function NoteItem({ id, title, createdAt, body, onDelete, onArchive, isArchive }) {
   const formatDate = (dateStr) => {
@@ -40,6 +41,16 @@ function NoteItem({ id, title, createdAt, body, onDelete, onArchive, isArchive }
     </div>
   );
 }
+
+NoteItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onArchive: PropTypes.func.isRequired,
+  isArchive: PropTypes.bool.isRequired,
+};
 
 export default NoteItem;
 

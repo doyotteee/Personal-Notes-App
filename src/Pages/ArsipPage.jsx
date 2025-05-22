@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import SearchBar from '../components/SearchBar';
 import NoteList from '../components/NoteList';
 import ButtonKembali from '../components/ButtonKembali';
@@ -25,5 +26,11 @@ function ArsipPage({ notes, onDelete, onArchive }) {
     </div>
   );
 }
+
+ArsipPage.propTypes = {
+  notes: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onArchive: PropTypes.func.isRequired,
+};
 
 export default ArsipPage;
