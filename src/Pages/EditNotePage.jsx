@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getNote } from '../utils/local-data';
 import ButtonKembali from '../components/ButtonKembali';
+import PropTypes from 'prop-types';
 
 function EditNotePage({ onEditNote }) {
   const { id } = useParams();

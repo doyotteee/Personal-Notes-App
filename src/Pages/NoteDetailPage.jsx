@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, useNavigate, Link, useLocation } from 'react-router-dom';
 import { getNote } from '../utils/local-data';
 import ButtonKembali from '../components/ButtonKembali';
+import PropTypes from 'prop-types';
 
 function NoteDetailPage({ onDelete, onArchive }) {
   const { id } = useParams();
@@ -84,6 +85,7 @@ function NoteDetailPage({ onDelete, onArchive }) {
     </div>
   );
 }
+
 NoteDetailPage.propTypes = {
   onDelete: PropTypes.func.isRequired,
   onArchive: PropTypes.func.isRequired,
