@@ -1,0 +1,337 @@
+:root {
+  --primary: #BB86FC;
+  --primary-variant: #3700B3;
+  --secondary: #03DAC6;
+  --background: #121212;
+  --surface: #121212;
+  --error: #CF6679;
+  --warning: #F39C12;
+  --on-background: #FFFFFF;
+  --on-background-grey: #c7c7c7;
+  --on-surface: #FFFFFF;
+}
+
+[data-theme="light"] {
+  --background: #DDDDDD;
+  --surface: #FFFFFF;
+  --on-background: #333333;
+  --on-background-grey: #6d6d6d;
+  --on-surface: #333333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--on-background);
+}
+
+
+body {
+  background: #181824;
+  color: #f1f1f1;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2rem 1rem 2rem;
+  border-bottom: 1px solid #333;
+  background: #232336;
+  color: #fff;
+  position: relative;
+}
+
+header h1 {
+  color: #00b4d8;
+  margin: 0 auto;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  flex: 1;
+}
+
+header a {
+  position: absolute;
+  right: 2rem;
+  color: #00b4d8;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header a:hover {
+  color: #90e0ef;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #caf0f8;
+}
+
+input[type="text"], textarea {
+  background: #232336;
+  color: #f1f1f1;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus, textarea:focus {
+  border: 1.5px solid #00b4d8;
+  outline: none;
+}
+
+button {
+  background: #00b4d8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+button:hover {
+  background: #0077b6;
+  color: #caf0f8;
+}
+
+/* Floating Button Kembali */
+.button-kembali {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 2rem;
+  background: #00b4d8;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 12px rgba(0,180,216,0.25);
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+.button-kembali:hover {
+  background: #0077b6;
+  transform: scale(1.08);
+}
+
+form {
+  background: #232336;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+div[style*="flex-wrap"] {
+  justify-content: flex-start;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* Note Card */
+div[style*="border: 2px solid white"] {
+  background: #232336 !important;
+  border: 2px solid #00b4d8 !important;
+  color: #f1f1f1 !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+div[style*="border: 2px solid white"]:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(0,180,216,0.15);
+}
+
+div[style*="border: 2px solid white"] h3 {
+  color: #90e0ef;
+  margin-bottom: 0.5rem;
+}
+
+div[style*="border: 2px solid white"] p {
+  color: #adb5bd;
+}
+
+@media (max-width: 900px) {
+  div[style*="flex-wrap"] {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+  div[style*="border: 2px solid white"] {
+    width: 95vw !important;
+    max-width: 400px;
+  }
+}
+
+/* Floating Add Button */
+button[style*="position: fixed"] {
+  background: #00b4d8;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 12px rgba(0,180,216,0.25);
+  font-size: 2.5rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 100;
+}
+
+button[style*="position: fixed"]:hover {
+  background: #0077b6;
+  transform: scale(1.08);
+}
+
+.app-container {
+  color: var(--on-background);
+  background-color: var(--background);
+  min-height: 100vh;
+  transition: all ease-in-out 0.5s;
+}
+
+main {
+  margin: 0 auto;
+  padding: 32px 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.notes-list {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 16px 8px;
+}
+
+.notes-list-empty {
+  margin-top: 32px;
+  padding: 16px 8px;
+}
+
+.notes-list-empty p {
+  text-align: center;
+  color: var(--on-background-grey);
+}
+
+/* Note Card */
+.note-item {
+  border: 2px solid #00b4d8;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 300px;
+  background: #232336;
+  color: #f1f1f1;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px;
+  cursor: pointer;
+}
+
+.note-item__title {
+  color: #90e0ef;
+  margin-bottom: 0.5rem;
+  text-decoration: underline;
+}
+
+.note-item__date {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+.note-item__body {
+  color: #adb5bd;
+}
+
+.note-item__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  justify-content: flex-end;
+}
+
+/* Tombol aksi pada note */
+.note-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.note-btn--delete {
+  background: #e63946;
+  color: #fff;
+}
+.note-btn--archive {
+  background: #00b4d8;
+  color: #fff;
+}
+.note-btn--unarchive {
+  background: #43aa8b;
+  color: #fff;
+}
+.note-btn--edit {
+  background: #ffd166;
+  color: #232336;
+}
+
+.textarea-catatan {
+  width: 100%;
+  min-height: 200px;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Responsive grid */
+@media screen and (min-width: 650px) {
+  .notes-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .detail-page__title { 
+    font-size: 64px;
+  }
+}
+@media screen and (min-width: 850px) {
+  .notes-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .notes-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
