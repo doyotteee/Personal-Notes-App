@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 import NoteItem from './NoteItem';
 
 function NoteList({ notes, onDelete, onArchive, isArchive }) {
+  if (notes.length === 0) {
+    return (
+      <div className="notes-list-empty">
+        <p>Tidak ada catatan</p>
+      </div>
+    );
+  }
+
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
       {notes.map(note => (

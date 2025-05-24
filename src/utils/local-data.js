@@ -1,11 +1,11 @@
 const STORAGE_KEY = 'notes-app-data';
 
-function loadNotes() {
-  const data = localStorage.getItem(STORAGE_KEY);
-  if (data) return JSON.parse(data);
-  // Data awal jika localStorage kosong
-  return [
-    {
+function saveNotes(notes) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+}
+
+let notes = [
+  {
       id: 'notes-1',
       title: 'Babel',
       body: 'Babel merupakan tools open-source yang digunakan untuk mengubah sintaks ECMAScript 2015+ menjadi sintaks yang didukung oleh JavaScript engine versi lama. Babel sering dipakai ketika kita menggunakan sintaks terbaru termasuk sintaks JSX.',
@@ -47,14 +47,7 @@ function loadNotes() {
       createdAt: '2022-04-14T04:27:34.572Z',
       archived: false,
     },
-  ];
-}
-
-function saveNotes(notes) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
-}
-
-let notes = loadNotes();
+];
 
 function getAllNotes() {
   return notes;
@@ -83,33 +76,28 @@ function addNote({ title, body }) {
       archived: false,
     },
   ];
-  saveNotes(notes);
 }
 
 function deleteNote(id) {
   notes = notes.filter((note) => note.id !== id);
-  saveNotes(notes);
 }
 
 function archiveNote(id) {
   notes = notes.map((note) =>
     note.id === id ? { ...note, archived: true } : note
   );
-  saveNotes(notes);
 }
 
 function unarchiveNote(id) {
   notes = notes.map((note) =>
     note.id === id ? { ...note, archived: false } : note
   );
-  saveNotes(notes);
 }
 
 function editNote({ id, title, body }) {
   notes = notes.map((note) =>
     note.id === id ? { ...note, title, body } : note
   );
-  saveNotes(notes);
 }
 
 export {
